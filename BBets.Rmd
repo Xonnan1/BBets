@@ -66,3 +66,4 @@ The function will be given a class_size by number of students, odds, and Number_
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
+Across all analyses, the simulation results align with the theoretical understanding of the birthday problem. The probability of a shared birthday in moderately sized groups is surprisingly high, and this fact grants Brownlow a substantial advantage when offering fixed 2:1 odds. The bet is neither fair nor balanced for the student; it is strongly and consistently profitable for Brownlow. If repeated many times, Brownlow almost certainly earns a significant positive return. Brownlow’s birthday bet is mathematically engineered to win—and the simulations confirm he profits reliably and substantially from it.

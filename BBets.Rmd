@@ -55,6 +55,7 @@ The function will be given a class_size by number of students, odds, and Number_
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
 
+
 # What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
 
 
@@ -62,19 +63,35 @@ The function will be given a class_size by number of students, odds, and Number_
 
 
 
-
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
+```{r}
+classSizes <- 10:60
+EVsize <- numeric(length(classSizes))
 
+for(i in seq_along(classSizes)){
+EVsize[i] <- mean(replicate(1000,
+BrLw(numClass = classSizes[i],
+odds = 2,
+countoDo = 1)))
+}
 
+fairSizeTable <- data.frame(classSize = classSizes, EV = EVsize)
 
+# class size where EV ~ 0
 
+fairSizeTable[which.min(abs(fairSizeTable$EV)), ]
 
+```
 
+Here we estimate what would happen if 40 different Brownlow “substitute teachers” each made the 637 bets. This gives us a distribution of possible career earnings for independent gamblers using the same strategy.The average earnings for the 40 substitutes are positive, with a narrow 95% confidence interval also above zero. This confirms that Brownlow’s betting strategy is reliably profitable even across many independent replications.
+
+The bet is not just favorable by theory—it is consistently and measurably profitable in simulation.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
+
 
